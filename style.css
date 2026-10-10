@@ -9,7 +9,7 @@
   --line: #d5dad8;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font-family: Helvetica, "Helvetica", sans-serif; line-height: 1.7; color: var(--ink); background: var(--sand); }
+body { margin: 0; font-family: Helvetica, sans-serif; line-height: 1.7; color: var(--ink); background: var(--sand); }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--teal); }
 a:focus-visible { outline: 3px solid var(--seafoam); outline-offset: 2px; }
