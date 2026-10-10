@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name | Portfolio</title>
+<meta name="description" content="Undergraduate portfolio: spatial data, DEM analysis, and seafloor mapping interests.">
+<style>
+  :root { --abyss:#06202e; --deep:#0b3a53; --teal:#1b7f8c; --seafoam:#8fd3c8; --sand:#f3efe6; }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body { display: flex; flex-direction: column; font-family: Georgia, serif; background: var(--abyss); }
+
+  header { background: linear-gradient(180deg, var(--deep), var(--abyss)); color: #fff; padding: 1.5rem 1.5rem 0; flex: none; }
+  .bar { max-width: 60rem; margin: 0 auto; }
+  header h1 { margin: 0; font-size: clamp(1.7rem, 5vw, 2.6rem); font-weight: normal; line-height: 1.1; }
+  header p { margin: .4rem 0 1.2rem; color: var(--seafoam); }
+
+  /* Tabs */
+  nav { display: flex; gap: .25rem; flex-wrap: wrap; font-family: system-ui, sans-serif; font-size: .95rem; }
+  nav a { color: #cfe3e8; text-decoration: none; padding: .55rem 1rem; border-radius: 6px 6px 0 0; }
+  nav a:hover { background: rgba(255,255,255,.1); }
+  nav a:focus-visible { outline: 3px solid var(--seafoam); outline-offset: -3px; }
+  nav a[aria-current="page"] { background: var(--sand); color: var(--deep); font-weight: 600; }
+
+  /* The frame fills the rest of the window */
+  main { flex: 1; min-height: 0; background: var(--sand); }
+  iframe { width: 100%; height: 100%; border: 0; display: block; background: var(--sand); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <h1>Your Name</h1>
+    <p>Undergraduate in [Your Major] at [Your University], interested in seafloor mapping and hydrography.</p>
+    <nav aria-label="Sections">
+      <a href="about.html" target="content" aria-current="page">About</a>
+      <a href="project.html" target="content">DEM project</a>
+      <a href="bathymetry.html" target="content">Toward bathymetry</a>
+      <a href="contact.html" target="content">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <iframe name="content" title="Page content" src="about.html"></iframe>
+</main>
+
+<script>
+  // Highlights the active tab, and lets a link like yoursite.io/#project open that tab directly.
+  var links = document.querySelectorAll("nav a");
+  var frame = document.querySelector("iframe");
+
+  function select(link) {
+    links.forEach(function (l) { l.removeAttribute("aria-current"); });
+    link.setAttribute("aria-current", "page");
+    history.replaceState(null, "", "#" + link.getAttribute("href").replace(".html", ""));
+  }
+
+  links.forEach(function (link) {
+    link.addEventListener("click", function () { select(link); });
+  });
+
+  var start = location.hash.slice(1);
+  links.forEach(function (link) {
+    if (link.getAttribute("href") === start + ".html") {
+      frame.src = link.getAttribute("href");
+      select(link);
+    }
+  });
+</script>
+</body>
+</html>
