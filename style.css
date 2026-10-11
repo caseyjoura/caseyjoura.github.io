@@ -10,7 +10,7 @@
 }
 * { box-sizing: border-box; }
 body { margin: 0; font-family: Helvetica, sans-serif; line-height: 1.7; color: var(--ink); background: var(--sand); }
-img { max-width: 45%; height: auto; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 a { color: var(--teal); }
 a:focus-visible { outline: 3px solid var(--seafoam); outline-offset: 2px; }
 .page { max-width: 44rem; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
