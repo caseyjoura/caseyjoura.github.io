@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work Sample - DEM</title><link rel="stylesheet" href="style.css"><base target="_blank"></head>
 <body><div class="page">
-<h2>Wildfire Risk in Southern California National Parks</h2>
+<h2><strong>Wildfire Risk in Southern California National Parks</strong></h2>
 <p>This was my final project for a course I took last semester. Throughout the course, we used tools in ArcGIS and Excel to clean, analyze, and
 display data. The purpose of the final project was to use all of the skills we gained throughout the semester. By choosing to
 measure wildfire risk among national parks, I was able to utilize digital elevation models, raster analysis tools, and zonal statistics.
@@ -14,7 +14,7 @@ of displaying information.</p>
   ArcGIS (National Parks)</dd>
   <dt>Tools</dt><dd>ArcGIS</dd>
 </dl>
-<h3>Methods</h3>
+<h3><strong>Methods</strong></h3>
 <p>
   I started by gathering my data and importing the DEM tiles into ArcGIS. After combining them using the "Mosaic to New Raster" tool, I 
 defined a study area with a 1km buffer and masked the DEM raster to the buffered study area.
@@ -48,11 +48,33 @@ defined a study area with a 1km buffer and masked the DEM raster to the buffered
     as my input raster. Then I joined the table to my parks layer and classified risk type by color. I labelled each park with its name so 
     anyone hypothetically viewing the final map could plan their trip accordingly. 
   </p>
-<figure>
-  <img src="images/dem-map.jpg" alt="description">
-  <figcaption>Figure 1. Final map of Southern California showing wildfire risk by national park</figcaption>
-</figure>
-<h3>Results</h3>
-<p>results ...</p>
+
+<h3><strong><Results</strong></h3>
+
+  <grid_color>
+    <img src="images/slope_color.png" alt="Slope risk.">
+  <figcaption>Figure 5. Slope risk calculated with a DEM.</figcaption>
+  <img src="images/roadproximity_color.png" alt="Road proximity risk.">
+  <figcaption>Figure 6. Road proximity risk calculated with U.S. Census TIGER data.</figcaption>
+  <img src="images/aspect_color.png" alt="Aspect risk.">
+  <figcaption>Figure 7. Aspect risk calculated with a DEM.</figcaption>
+  <img src="images/groundcovertype_color.png" alt="Groundcover type risk.">
+  <figcaption>Figure 8. Groundcover type risk calculated with National Land Cover data.</figcaption>
+  </grid_color>
+  <grid_binary>
+  <img src="images/slope_binary.png" alt="Slope risk on a scale of 0-1.">
+  <figcaption>Figure 5. Slope risk as either 0 (no risk, yellow) or 1 (risk, orange).</figcaption>
+  <img src="images/roadproximity_binary.png" alt="Road proximity risk on a scale of 0-1.">
+  <figcaption>Figure 6. Road proximity risk as either 0 (no risk, yellow) or 1 (risk, orange).</figcaption>
+  <img src="images/aspect_binary.png" alt="Aspect risk on a scale of 0-1.">
+  <figcaption>Figure 7. Aspect risk as either 0 (no risk, yellow) or 1 (risk, orange).</figcaption>
+  <img src="images/groundcovertype_binary.png" alt="Groundcover type risk on a scale of 0-1.">
+  <figcaption>Figure 8. Groundcover type risk as either 0 (no risk, yellow) or 1 (risk, orange).</figcaption>
+</grid_binary>
+  <figure>
+    <img src="images/parks_final.png" alt="Map showing Southern California national parks and their risk level based on slope, road proximity, 
+      aspect, and landcover type.">
+    <figcaption>Figure 9. Final map of Southern California showing wildfire risk by national park.</figcaption>
+  </figure>
 <p><a href="https://github.com/yourusername/your-repo">View code and data on GitHub</a></p>
 </div></body></html>
