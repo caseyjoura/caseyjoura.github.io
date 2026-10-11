@@ -28,7 +28,7 @@ defined a study area with a 1km buffer and masked the DEM raster to the buffered
     tool to add a buffer to all the roads in the study area. I decided on a 1km distance -- if a cell is less than 1km from a road, it's risky. 
   </p>
   <p>
-    Land cover data was sourced frmo the National Land Cover Dataset through the MRLC. I sorted land cover types water, developed 
+    Land cover data was sourced from the National Land Cover Dataset through the MRLC. I sorted land cover types water, developed 
     land, cropland, barren land, and wetland as not risky and all other vegetative types as risky. Anything that wasn't labelled as a type 
     I assigned "NODATA" so they wouldn't display on the map. I set non-risk as transparent/no color so any color displayed on the map was 
     risky.
