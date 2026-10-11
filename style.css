@@ -18,8 +18,8 @@ h2 { color: var(--deep); font-size: 1.8rem; font-weight: normal; margin: 0 0 1re
 h3 { color: var(--deep); margin: 1.8rem 0 .4rem; font-size: 1.2rem; }
 figure { margin: 1.5rem 0; }
 figcaption { font-family: system-ui, sans-serif; font-size: .88rem; color: #51646d; margin-top: .5rem; }
-grid_color { display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 10px; position: relative; }
-grid_binary { display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 10px; position: relative; }
+gridcolor { display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 10px; position: relative; }
+gridbinary { display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 10px; position: relative; }
 .facts { font-family: system-ui, sans-serif; font-size: .95rem; background: #fff; border-left: 5px solid var(--teal); padding: 1rem 1.25rem; margin: 1.5rem 0; }
 .facts dt { font-weight: 600; color: var(--deep); }
 .facts dd { margin: 0 0 .6rem; }
