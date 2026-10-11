@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work Sample - DEM</title><link rel="stylesheet" href="style.css"><base target="_blank"></head>
 <body><div class="page">
-<h2>Wildfire Risk in SoCal</h2>
+<h2>Wildfire Risk in Southern California National Parks</h2>
 <p>This was my final project for a course I took last semester. Throughout the course, we used tools in ArcGIS and Excel to clean, analyze, and
 display data. The purpose of the final project was to use all of the skills we gained throughout the semester. By choosing to
 measure wildfire risk among national parks, I was able to utilize digital elevation models, raster analysis tools, and zonal statistics.
@@ -14,11 +14,43 @@ of displaying information.</p>
   ArcGIS (National Parks)</dd>
   <dt>Tools</dt><dd>ArcGIS</dd>
 </dl>
-<h3>Method</h3>
-<p>methods</p>
+<h3>Methods</h3>
+<p>
+  I started by gathering my data and importing the DEM tiles into ArcGIS. After combining them using the "Mosaic to New Raster" tool, I 
+defined a study area with a 1km buffer and masked the DEM raster to the buffered study area.
+</p>
+  <p>
+    To find the slope, I used the DEM as an input and used the "Slope" tool. I used the "Focal Statistics" tool to find neighborhoods of cells
+   with strong slopes and marked areas with slopes greater than or equal to 30% as risky.
+  </p>
+  <p>
+    Then, I determined risky areas based on proximity to roads. Using data from the U.S. Census TIGER program, I applied the "Euclidean Distance" 
+    tool to add a buffer to all the roads in the study area. I decided on a 1km distance -- if a cell is less than 1km from a road, it's risky. 
+  </p>
+  <p>
+    Land cover data was sourced frmo the National Land Cover Dataset through the MRLC. I sorted land cover types water, developed 
+    land, cropland, barren land, and wetland as not risky and all other vegetative types as risky. Anything that wasn't labelled as a type 
+    I assigned "NODATA" so they wouldn't display on the map. I set non-risk as transparent/no color so any color displayed on the map was 
+    risky.
+  </p>
+  <p>
+    The last risk criteria I took into account was aspect. I put the DEM into the "Aspect" tool and classified south, southeast, and southwest 
+    facing land as risky. Same as land cover, I changed the colorway such that only risky areas displayed in the layer. 
+  </p>
+  <p>
+    Then I combined the risk criteria layers using the Raster Calculator. Some of my layers showed lakes as risky, which didn't make sense, 
+    so I set up my equation as (slope + road proximity + aspect) * land cover type. By doing this, any area with a risk of zero based on 
+    land cover would automatically display as zero risk. This created a layer that ranked wildfire risk from 0-3, with 3 being riskiest.
+  </p>
+  <p>
+    Then I wanted to display this information in a way that might be more practical for the average person, so I added a shapefile with 
+    national park information. I used the "Zonal Statistics as Table" tool and added the parks shapefile as my zone data and the wildfire risk 
+    as my input raster. Then I joined the table to my parks layer and classified risk type by color. I labelled each park with its name so 
+    anyone hypothetically viewing the final map could plan their trip accordingly. 
+  </p>
 <figure>
   <img src="images/dem-map.jpg" alt="description">
-  <figcaption>Figure 1. caption</figcaption>
+  <figcaption>Figure 1. Final map of Southern California showing wildfire risk by national park</figcaption>
 </figure>
 <h3>Results</h3>
 <p>results ...</p>
