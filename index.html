@@ -16,14 +16,12 @@
   header h1 { margin: 0; font-size: clamp(1.7rem, 5vw, 2.6rem); font-weight: normal; line-height: 1.1; }
   header p { margin: .4rem 0 1.2rem; color: var(--seafoam); }
 
-  /* Tabs */
   nav { display: flex; gap: .25rem; flex-wrap: wrap; font-family: system-ui, sans-serif; font-size: .95rem; }
   nav a { color: #cfe3e8; text-decoration: none; padding: .55rem 1rem; border-radius: 6px 6px 0 0; }
   nav a:hover { background: rgba(255,255,255,.1); }
   nav a:focus-visible { outline: 3px solid var(--seafoam); outline-offset: -3px; }
   nav a[aria-current="page"] { background: var(--sand); color: var(--deep); font-weight: 600; }
 
-  /* The frame fills the rest of the window */
   main { flex: 1; min-height: 0; background: var(--sand); }
   iframe { width: 100%; height: 100%; border: 0; display: block; background: var(--sand); }
 </style>
@@ -47,7 +45,6 @@
 </main>
 
 <script>
-  // Highlights the active tab, and lets a link like yoursite.io/#project open that tab directly.
   var links = document.querySelectorAll("nav a");
   var frame = document.querySelector("iframe");
 
